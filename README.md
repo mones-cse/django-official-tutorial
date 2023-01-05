@@ -145,3 +145,7 @@ from .models import Question
 
 admin.site.register(Question)
 ```
+
+### Create Superuser
+
+`python manage.py createsuperuser`
