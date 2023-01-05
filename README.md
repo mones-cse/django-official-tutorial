@@ -262,3 +262,69 @@ Using named URL patterns and the {% url %} template tag can make it easier to ma
 you don't have to hardcode the URLs in your templates. If you need to change the URL patterns in your project, you only
 have to update the urlpatterns list in your urls module, and the corresponding URLs in your templates will be updated
 automatically.
+
+### what is {% csrf_token %}
+
+In Django, the {% csrf_token %} template tag is used to protect your website against Cross-Site Request Forgery (CSRF)
+attacks. CSRF attacks are a type of malicious exploit that target a website by tricking a user's browser into making
+unintended requests to the website.
+
+The {% csrf_token %} template tag is used in Django templates to generate a CSRF token that is included in the HTML of a
+rendered template. The token is sent back to the server when the user submits a form, and the server checks the token to
+verify that the form submission is legitimate.
+
+To use the {% csrf_token %} template tag, you need to have 'django.middleware.csrf.CsrfViewMiddleware' in your
+MIDDLEWARE setting and the csrf_token template tag in your template.
+
+Here is an example of how you might use the {% csrf_token %} template tag in a Django template:
+
+```html
+
+<form method="post">
+    {% csrf_token %}
+    <!-- form fields go here -->
+    <button type="submit">Save</button>
+</form>
+```
+
+When this template is rendered, the {% csrf_token %} template tag will be replaced with an HTML input element containing
+the CSRF token. When the form is submitted, the CSRF token will be sent back to the server and checked to make sure the
+submission is legitimate.
+
+Using the {% csrf_token %} template tag is an important security measure to protect your Django website from CSRF
+attacks. It is recommended to use it whenever you have a form that accepts POST, PUT, or DELETE requests in your Django
+templates.
+
+### what is pluralize
+
+In Django templates, the pluralize template filter is used to pluralize a word depending on the value of a variable. It
+is a built-in template filter that is part of Django's template language.
+
+The pluralize filter takes two arguments: the word to be pluralized and the number that determines whether the word
+should be pluralized. If the number is greater than 1, the pluralize filter will return the plural form of the word. If
+the number is 0 or 1, it will return the singular form of the word.
+
+Here is an example of how you might use the pluralize filter in a Django template:
+
+```html
+{% for object in object_list %}
+{{ object.name }}
+{% endfor %}
+
+{% if object_list|length > 1 %}
+<p>There are {{ object_list|length }} {{ object_list.model|lower }}s.</p>
+{% else %}
+<p>There is {{ object_list|length }} {{ object_list.model|lower|pluralize }}.</p>
+{% endif %}
+
+```
+
+In this example, the pluralize filter is used to pluralize the word object_list.model depending on the number of objects
+in the object_list. If there is more than one object, the pluralize filter will return the plural form of the word (
+e.g. 'books' if object_list.model is 'book'). If there is only one object, it will return the singular form of the
+word (e.g. 'book').
+
+The pluralize filter is a convenient way to handle pluralization in Django templates. It is especially useful when you
+are working with languages that have complex rules for pluralization.
+
+###
