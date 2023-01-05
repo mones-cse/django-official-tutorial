@@ -1,2 +1,17 @@
+# IDE
 .idea/
+
+# Ignore compiled Python files
 __pycache__/
+
+# Ignore Django's cache and session files
+*.pyc
+local_settings.py
+db.sqlite3
+
+# Ignore Django's static and media files
+staticfiles/
+media/
+
+# Ignore Django's migrations
+**/migrations/
