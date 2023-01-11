@@ -15,3 +15,4 @@ media/
 
 # Ignore Django's migrations
 **/migrations/
+__playground__.py
