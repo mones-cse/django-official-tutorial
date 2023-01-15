@@ -327,4 +327,11 @@ word (e.g. 'book').
 The pluralize filter is a convenient way to handle pluralization in Django templates. It is especially useful when you
 are working with languages that have complex rules for pluralization.
 
-###
+### Generic view
+
+For common uses like details view and list view we can use generic view
+
+### Test
+
+For run test case use command like this
+`python manage.py test polls` where polls is app name
