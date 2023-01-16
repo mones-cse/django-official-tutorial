@@ -7,12 +7,12 @@ __pycache__/
 # Ignore Django's cache and session files
 *.pyc
 local_settings.py
-db.sqlite3
+#db.sqlite3
 
 # Ignore Django's static and media files
 staticfiles/
 media/
 
 # Ignore Django's migrations
-**/migrations/
+#**/migrations/
 __playground__.py

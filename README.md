@@ -335,3 +335,10 @@ For common uses like details view and list view we can use generic view
 
 For run test case use command like this
 `python manage.py test polls` where polls is app name
+
+### Admin page Customization
+
+We can customize admin page by customizing `app/admin.py` file like `polls/admin.py`
+We can register multiple model to the admin page
+We can add multiple value at a same time using `class ChoiceInline(admin.TabularInline):`
+We can update the admin page for list display use`list_display` for filtering `list_filter` for search `search_fields`
